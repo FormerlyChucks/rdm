@@ -50,6 +50,56 @@
     headers = {'User-agent': 'this is your user-agent'}
     response = requests.get("https://avatars1.githubusercontent.com/u/61555147", headers=headers)
     </code></pre>
-
+    <!---->
+    <h2>Sometimes, we need to get text, like with JSON:</h2>
+    <pre><code class="python">
+    import requests
     
+    response = requests.get("https://api.github.com/").text
+    print(response)
+    </code></pre>
+    <!---->
+    <h2>To open a file and write some text:</h2>
+    <pre><code class="python">
+    with open("file.ext", "r") as file:
+        f.write("Example Text")
+    </code></pre>
+    <h3>You should adjust the last line like this:</h3>
+    <pre><code class="python">
+    f.write("Example Text" + "\n")
+    </code></pre>
+    <h3>Otherwise trying to run it again will look like this:</h3>
+    <pre><code>
+    ExampleTextExampleText
+    </code></pre>
+    <!---->
+    <h2>Want to choose a random string from a list? Just use this:</h2>
+    <pre><code class="python">
+    import random
+
+    choices = ['1', '2', '3']
+    print(random.choice(choices))
+    </code></pre>
+    <!---->
+    <h2>Loading JSON data:</h2>
+    <br>Its pretty easy:<br/>
+    <pre><code class="python">
+    import requests, json
+
+    json_loaded = json.loads(requests.get('https://api.github.com').text)
+    print(json_loaded["current_user_url"])
+    </code></pre>
+    <!---->
+    <h2>Need to ask a question?</h2>
+    <pre><code class="python">
+    q = input("What is your name")
+    print("Hello, " + q)
+    </code></pre>
+    <!---->
+    <h2>Getting the current time</h2>
+    <pre><code class="python">
+    from datetime import datetime
+
+    print(datetime.now().strftime("%H:%M"))
+    </code></pre>
 </body>
