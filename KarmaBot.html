@@ -1,1 +1,57 @@
-TBD
+<html>
+<head>
+<title>Mr-Steal-Your-Script</title>
+<style type="text/css">
+    body {background-color:black!important;color:white!important}
+</style>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/dracula.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+    <h1>KarmaBot</h1>
+    <h2>Setup on Linux</h2>
+    <h3>Original Version</h3>
+    You'll need a Linux distro. Any distro that supports Python, Nano, Pip3 and Git will work.<br/>
+    Download the bot and change into its directory:
+    <pre><code class="plaintext">git clone https://github.com/Mr-Steal-Your-Script/KarmaBot && cd KarmaBot/old</code></pre>
+    Install the needed packages:
+    <pre><code class="plaintext">pip3 install -r requirements.txt</code></pre>
+    <dl>
+        <dt>Create a reddit app</dt>
+        <dd>- Go to /prefs/apps</dd>
+        <dd>- Select "are you a developer? create an app..."</dd>
+        <dd>- Name it whatever you want to</dd>
+        <dd>- Select "script"</dd>
+        <dd>- For the description, leave a short description about the bot</dd>
+        <dd>- Leave "about url" blank</dd>
+        <dd>- For the "redirect uri", put a link to your favorite porno</dd>
+    </dl>
+    <dl>
+        <dt>Create an imgur app</dt>
+        <dd>- Go to Go to /oauth2/addclient</dd>
+        <dd>- Name it whatever</dd>
+        <dd>- For the "Authorization callback URL:", put a link to your favorite porno</dd>
+        <dd>- Fill in your email address</dd>
+        <dd>- Leave a short description about the bot</dd>
+        <dd>- Prove that you aren't a robot</dd>
+    </dl>
+    Edit the configuration file:
+    <pre><code class="plaintext">nano main.py</code></pre>
+    <dl>
+        <dd>- Edit "C_ID" with the "personal use script"</dd>
+        <dd>- Edit "C_S" with the secret</dd>
+        <dd>- Edit "U_A" with the bot's description</dd>
+        <dd>- Edit "UN" with the bot's username</dd>
+        <dd>- Edit "PW" with your bot's password</dd>
+        <dd>- Edit "I_ID" with your imgur client id</dd>
+    </dl>
+    Save the file<br/>
+    (ctrl x and Y)<br/>
+    Run the bot:
+    <pre><code class="plaintext">python3 main.py</code></pre>
+    Sit back and relax...<br/>
+    ...as you realize how shitty your life is. I mean, seriously? You ended up making a bot for the sole purpose of getting karma? You're fucking pathetic mate, get a life.
+</body>
+</html>
