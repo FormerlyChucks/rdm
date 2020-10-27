@@ -69,9 +69,7 @@
     f.write("Example Text" + "\n")
     </code></pre>
     <h3>Otherwise trying to run it again will look like this:</h3>
-    <pre><code>
-    ExampleTextExampleText
-    </code></pre>
+    <pre><code class="plaintext">ExampleTextExampleText</code></pre>
     <!---->
     <h2>Want to choose a random string from a list? Just use this:</h2>
     <pre><code class="python">
@@ -102,4 +100,14 @@
 
     print(datetime.now().strftime("%H:%M"))
     </code></pre>
+    <h3>That will return something like this:</h3>
+    <pre><code class="plaintext">13:29</code></pre>
+    <h3>To get the seconds as well:</h3>
+    <pre><code class="python">
+    from datetime import datetime
+    
+    print(datetime.now().strftime("%H:%M:%S"))
+    </code></pre>
+    <h3>Now you'll have something like this:</h3>
+    <pre><code class="plaintext">13:29:06</code></pre>
 </body>
