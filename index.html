@@ -22,4 +22,34 @@
     date = time.strftime("%D", time.gmtime(created_utc))
     print(date)
     </code></pre>
+    <!---->
+    <h2>To convert utc to days:</h2>
+    <pre><code class="python">
+    import time
+    from datetime import datetime, timedelta
+
+    created_utc = 
+    print((datetime.utcnow() - datetime.utcfromtimestamp(created_utc)).days)
+    </code></pre>
+    <!---->
+    <h2>Downloading something</h2>
+    <br>Downloading something is fairly easy:<br/>
+    
+    <br>(We will be downloading my profile picture)<br/>
+    <pre><code class="python">
+    import requests
+
+    response = requests.get("https://avatars1.githubusercontent.com/u/61555147")
+
+    file = open("profile-pic.png", "wb")
+    file.write(response.content)
+    file.close()
+    </code></pre>
+    <h3>You might not be able to, as the default requests header is rate-limited a lot. Simply add a header like this:</h3>
+    <pre><code class="python">
+    headers = {'User-agent': 'this is your user-agent'}
+    response = requests.get("https://avatars1.githubusercontent.com/u/61555147", headers=headers)
+    </code></pre>
+
+    
 </body>
