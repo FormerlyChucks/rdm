@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Mr-Steal-Your-Script</title>
+<style type="text/css">
+    body {background-color:black!important;color:white!important}
+</style>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/dracula.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+    <h1>snippets</h1>
+    <b>A collection of my Python snippets</b>
+    <h2>Converting utc</h2>
+    To convert utc to date format:<br/>
+
+    (`created_utc` will have to be an integer)<br/>
+    <pre><code class="python">
+    import time
+    created_utc = #utc integer
+    date = time.strftime("%D", time.gmtime(created_utc))
+    print(date)
+    </code></pre>
+</body>
