@@ -2,7 +2,12 @@
 <head>
 <title>Python Forum</title>
 <style type="text/css">
-    body {background-color:black!important;color:white!important}
+    html{background-color: black;}
+    body {background-color:grey!important;color:black!important}
+    body {box-sizing: border-box;width: 700px;margin: 50px auto;padding: 40px;}
+    body{text-align: center;}
+    h1{font-size: 40px;}
+    h2{font-size: 30px;}
 </style>
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/dracula.min.css">
@@ -35,16 +40,12 @@
     <pre><code class="plaintext">pipenv run python3 app.py</code></pre>
     Your terminal should give you something like this:
     <pre><code class="bash">
-    INFO:     Started server process [19182]
-    INFO:     Waiting for application startup.
-    Preparing free thread slugs...
-    INFO:     Application startup complete.
     INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
     </code></pre>
     <h2>Customization</h2>
     In your browser, navigate to the http site. In my case, it was http://0.0.0.0:8000<br/>
     You should have a white screen that says "Be the first to create a board?". Tap the "New Board" button to create your first board!. "Slug" is the board's slug, "Title" is the board's title. You will also have to create a [f]irst post. To make a board called "awesome" that links from /a/, your slug would be "a" and your title would be "awesome". After creating your board, go back to the main page.
     To edit the "[this is a footer]" message, open /templates/footer/html and edit the message. To edit the "[name]", you will need to adjust line 7 in /templates/base.html and line 22 in /templates/common.html. To edit "[logo]", do the same for line 3 in /templates/header.html.<br/>
-    That should be all! Create an issue in the <a href="https://github.com/diogenesjunior2/Forum">GitHub repository</a>.
+    That should be all! If you have any problems, create an issue in the <a href="https://github.com/diogenesjunior2/Forum">GitHub repository</a>.
 </body>
 </html>
