@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>Mr-Steal-Your-Script</title>
+<style type="text/css">
+    html{background-color: black;}
+    body {background-color:grey!important;color:black!important}
+    body {box-sizing: border-box;width: 600px;margin: 50px auto;padding: 40px;}
+    body{text-align: center;}
+    h1{font-size: 40px;}
+    h2{font-size: 30px;}
+</style>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/dracula.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+    <h1>ImgurBot</h1>
+    <h2>About</h2>
+    This bot reposts things from Reddit to Imgur. Those silly Redditors always talk about how Instagram steals their submissions, but they never mention that Imgurians do the same. I guess it shows that we suck all around, huh?<br/>
+    <h2>Setup</h2>
+    You'll need a Linux distro. Any distro that supports Python, Nano, Pip3 and Git will work. It might work on Windows/Mac, but I haven't tested that out. <br/>
+    <b>Download the bot</b>:<br/>
+    <pre><code class="plaintext">git clone https://github.com/Mr-Steal-Your-Script/ImgurBot</code></pre>
+    <b>Change into its directory:</b>
+    <pre><code class="plaintext">cd KarmaBot/old</code></pre>
+    <b>Install the needed packages:</b>
+    <pre><code class="plaintext">pip3 install -r requirements.txt</code></pre>
+    <h2>Getting API Keys</h2>
+    <imgur>
+    <b>Create an imgur app</b><br/>
+    - Go to <a href="https://imgur.com/oauth2/addclient">/oauth2/addclient</a><br/>
+    - Fill in the form and get your Imgur client ID.<br/>
+    </imgur>
+    <reddit>
+    <b>Create a reddit app</b><br/>
+    - Go to <a href="https://old.reddit.com/prefs/apps">/prefs/apps</a><br/>
+    - Select "are you a developer? create an app..."<br/>
+    - Name it whatever you want to<br/>
+    - Select "script"<br/>
+    - For the description, leave a short description about the bot<br/>
+    - Leave "about url" blank<br/>
+    - For the "redirect uri", put a link to your favorite porno<br/>
+    <h2>Edit the configuration file:</h2>
+    <pre><code class="plaintext">nano config.py</code></pre>
+    <dl>
+        <dd>- Edit "c_id" with the "personal use script"</dd>
+        <dd>- Edit "c_s" with the secret</dd>
+        <dd>- Edit "u_a" with the bot's description</dd>
+        <dd>- Edit "un" with the bot's username</dd>
+        <dd>- Edit "pw" with your bot's password</dd>
+        <dd>- Edit "i_id" with your imgur client id</dd>
+        <dd>- For the list of subs, add some subs that you wish to repost from</dd>
+    </dl>
+    Save the file<br/>
+    (ctrl x and Y)<br/>
+    <h2>Run the bot:</h2>
+    <pre><code class="plaintext">python3 main.py</code></pre>
