@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1>Python Forum</h1>
-    <b>A Forum, made with Python</b>
+    <br>A Forum, made with Python<br/>
     The goal is that you should have your own textboard/forum by the end of this guide. You should have Git, Pip and Python installed.
     <h2>Features</h2>
     <dl>
@@ -24,7 +24,7 @@
     <h2>Setup/Run</h2>
     <br>This should be easy to set up.<br/>
     <br>Simply clone the repo:<br/>
-    <pre><code class="plaintext">git clone https://github.com/Mr-Steal-Your-Script/Forum</code></pre>
+    <pre><code class="plaintext">git clone https://github.com/titletrack/Forum</code></pre>
     <br>Change into the directory:<br/>
     <pre><code class="plaintext">cd Forum</code></pre>
     <br>Install requirements:<br/>
@@ -36,7 +36,7 @@
     INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
     </code></pre>
     <h2>Customization</h2>
-    In your browser, navigate to the http site. In my case, it was http://0.0.0.0:8000<br/>
+    In your browser, navigate to the http site.<br/>
     You should have a white screen that says "Be the first to create a board?". Tap the "New Board" button to create your first board!. "Slug" is the board's slug, "Title" is the board's title. You will also have to create a [f]irst post. To make a board called "awesome" that links from /a/, your slug would be "a" and your title would be "awesome". After creating your board, go back to the main page.
     To edit the "[this is a footer]" message, open /templates/footer/html and edit the message. To edit the "[name]", you will need to adjust line 7 in /templates/base.html and line 22 in /templates/common.html. To edit "[logo]", do the same for line 3 in /templates/header.html.<br/>
     That should be all! If you have any problems, create an issue in the <a href="https://github.com/diogenesjunior2/Forum">GitHub repository</a>.
