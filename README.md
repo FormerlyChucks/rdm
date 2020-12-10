@@ -6,8 +6,8 @@
 
 (You will need Python 3 installed)
 
-    git clone https://github.com/titletrack/titletrack.github.io
-    cd titletrack.github.io
+    git clone https://github.com/IThinkImOKAY/ithinkimokay.github.io_/
+    cd ithinkimokay.github.io_
     python3 -m http.server
 
 It should start running on http://localhost:8000
