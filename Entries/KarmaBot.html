@@ -1,9 +1,9 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
-  <link rel="stylesheet" href="style.css" type="text/css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
+  <link rel="stylesheet" href="style.css" type="text/css"/>
 <title>Karma Bot</title>
 </head>
 <body bgcolor=ffffff>
@@ -14,145 +14,37 @@
 <hr>
 <p>
 <h1>Karma Bot</h1>
-<img src="./pics/karma.png" height="240" width="320" hspace="15" align=right>
-Gosh, where do I even start? This was a fun <i>experiment</i>. If you're here, you're probably pissed off and want to know more about these reddit bots and how they work, or you're here to set one up yourself. Either way, you're in the right place. Karma Bot was simply a personal test. I only ran the code once, and I'd say it went okay. Just <i>okay</i>, not smooth. I'd like to make it clear that I have never and will never use a fake account to "shill" or <a href="https://redd.it/ila6xr">influence political ideas</a>. This was simply a test to see how much karma I could get via automation (with Python). I ended up with just below 120,000 karma in a little under 72 hours.<p>
-It uses PRAW, the Python Reddit API Wrapper, and the original code was only 42 lines. I also made use of "Halo", a package that allows users to display an animated spinner while running Python code. Before I get to actually explaining my code, I'd like to explain what it does:
-
-    <dl>
-        <dd>- Go to /r/random<br/></dd>
-        <dd>- Grab random post from /top</dd>
-        <dd>- If the submission is hosted on i.redd.it or i.imgur.com:</dd>
-        <dd>- Upload to Imgur with the submission's url</dd>
-        <dd>- Submit to subreddit with link to Imgur repost</dd>
-    </dl>
-
-Now, to break down the code:
-<pre><code>
-    import time
-    import praw
-    import random
-    import config
-    import pyimgur
-    from halo import Halo
-</code></pre>
-<p>
-These are the packages that I used.
-    <dl>
-        <dd>- "time" - for waiting and sleeping<br/></dd>
-        <dd>- "praw" - use reddit's API</dd>
-        <dd>- "random" - grabbing random posts</dd>
-        <dd>- "config" - PY file that contains API keys</dd>
-        <dd>- "pyimgur" - use imgur's API</dd>
-        <dd>- "halo" - fancy spinner</dd>
-    </dl><p>
-<p>
-<pre><code>
-spinner = Halo(spinner={'interval': 100, 'frames': ['-', '+', '*', '+', '-']})
-</code></pre>
-<p>
-Configuration for the spinner.
-<p>
-<p>
-<pre><code>
-reddit = praw.Reddit(...)
-imgur_id = config.I_ID
-</code></pre>
-<p>
-Allows us to use both Imgur and Reddit's API
-<p>
-<p>
-<pre><code>
-spinner.start()
-subreddit = reddit.subreddit('random')
-domains = ['i.redd.it', 'i.imgur.com']
-limit = None
-print('Random Subreddit Is: ', subreddit)
-</code></pre>
-<p>
-<p>
-In order:
-
-    <dl>
-        <dd>Start the spinner<br/></dd>
-        <dd>Define subreddit as /r/random</dd>
-        <dd>List of domains to check</dd>
-        <dd>Amount of posts to check</dd>
-        <dd>Print subreddit</dd>
-    </dl>
-<p>
-
-<pre><code>
-submissions = list(subreddit.top('all', limit=limit))
-submission = random.choice(submissions)
-</code></pre>
-
-    <dl>
-        <dd>Get list of posts in subreddit<br/></dd>
-        <dd>Choose random post from above list</dd>
-    </dl>
-
-<pre><code>
-if submission.domain in domains:
-    im = pyimgur.Imgur(imgur_id)
-    uploaded_image = im.upload_image(url=submission.url)
-</code></pre>
-
-    <dl>
-        <dd>If the domain is in our list of domains:<br/></dd>
-        <dd>Declare PyImgur instance</dd>
-        <dd>Upload image to Imgur with the submission's url</dd>
-    </dl>
-    
-<pre><code>
-with open ('links.txt', "a") as f:
-    f.write(uploaded_image.link + "\n")    
-</code></pre>
-
-    <dl>
-        <dd>Open "links.txt", a file made for storing Imgur urls<br/></dd>
-        <dd>Write Imgur url to file</dd>
-    </dl>
-
-<pre><code>
-reddit.validate_on_submit = True
-subreddit.submit(submission.title, url=uploaded_image.link)
-spinner.succeed('success')
-</code></pre>
-
-    <dl>
-        <dd>No idea why I need to validate when I submit, but the API recommended it (at the time)<br/></dd>
-        <dd>Submit Imgur url to subreddit with old submission's title</dd>
-        <dd>Print "success" with spinner</dd>
-    </dl>
-
-<pre><code>
-except Exception as e:
-    exc = str(str(e))
-    spinner.fail(text=exc)
-    time.sleep(60)
-</code></pre>
-
-    <dl>
-        <dd>If any exceptions or errors happen:<br/></dd>
-        <dd>Print the exception with spinner</dd>
-        <dd>Sleep for 60 seconds</dd>
-    </dl>
-
-<pre><code>
-except KeyboardInterrupt:
-    spinner.warn(text='shutting down :(')
-    quit()
-</code></pre>
-
-    <dl>
-        <dd>If user ends program:<br/></dd>
-        <dd>Note so with spinner</dd>
-        <dd>Quit</dd>
-    </dl>
-    
-If you know me, you'd know that I hate dealing with "prettified" code. It bugs me a ton. I later learned that I could simplify the code, and you can see that in the newer code version. I later left an end note in /r/TheoryOfReddit, but the moderators removed it:
-    <h3>It was fun [for me] while it lasted. Goodbye all.</h3>
-    If I, a mere bored teenager could do this in under three days, what could a big corporation do? Someone else could run this a ton, sell the accounts, and profit, which would be just monetizing karma. Anybody could do this themselves on 20 to 30 accounts and have their own mini bot net. This account isn't even aged! I would have way more karma if I waited, because /u/AutoModerator removed a ton of my posts.
+<h2>About</h2>
+    This bot reposts old submissions on reddit. Using it, I was able to get just over 100,000 karma in under 72 hours.<br/>
+    <h2>Setup</h2>
+    You'll need a Linux distro. Any distro that supports Python, Nano, Pip3 and Git will work. It might work on Windows/Mac, but I haven't tested that out. <br/>
+    <b>Download the bot</b>:<br/>
+    <pre><code class="plaintext">git clone https://github.com/Mr-Steal-Your-Script/KarmaBot</code></pre>
+    <b>Change into its directory:</b>
+    <pre><code class="plaintext">cd KarmaBot</code></pre>
+    <b>Install the needed packages:</b>
+    <pre><code class="plaintext">pip3 install -r requirements.txt</code></pre>
+    <h2>Getting API Keys</h2>
+    <imgur>
+    <b>Create an Imgur app</b><br/>
+    - Go to <a href="https://api.imgur.com/oauth2/addclient">/oauth2/addclient</a><br/>
+    - Fill in the form and get your Imgur client ID.<br/>
+    </imgur>
+    <reddit>
+    <b>Create a Reddit app</b><br/>
+    - Go to <a href="https://old.reddit.com/prefs/apps">/prefs/apps</a><br/>
+    - Select "are you a developer? create an app..."<br/>
+    - Name it whatever you want to, but select "script"<br/>
+    - Fill in the rest of the form<br/>
+    <h2>Edit the configuration file:</h2>
+    <pre><code class="plaintext">nano config.py</code></pre>
+    - Edit "clien_id" with the personal use script<br/>
+    - Edit "client_secret" with the secret<br/>
+    - Edit "user_agent" with the bot's description<br/>
+    - Edit "imgur_id" with your Imgur client id<br/>
+    Save the file (ctrl x and Y)<br/>
+    <h2>Run the bot:</h2>
+    <pre><code class="plaintext">python3 main.py</code></pre>
 
 <p>
 
