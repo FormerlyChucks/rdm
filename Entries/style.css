@@ -4,7 +4,7 @@ h1 {
     font-size: 22px;
     font-weight: normal;
     font-variant: small-caps;
-    color: #aaaaaa;    
+    color: blue;    
 }
 
 body {
@@ -18,7 +18,7 @@ h2 {
     font-size: 18px;
     font-weight: normal;
     font-variant: small-caps;
-    color: #aaaaaa;
+    color: red;
 }
 
 a:hover {
