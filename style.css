@@ -1,0 +1,48 @@
+.premium-banner, .ad-container, .promotedlink, .bottommenu.bottommenu-advertise, .happening-now {
+    display:none!important;
+}
+.email-collection-banner, section.infobar.listingsignupbar, div#sr-header-area, a#header-img.default-header, div.footer {
+    display:none!important;
+}
+p.bottommenu, a.get-crisis-support, div.server-seconds.rounded, div.sidecontentbox.trophy-area, .nub {
+    display:none!important;
+}
+form#login_login-main.login-form.login-form-side, img#header-img, .sidebox.create, .redesign-beta-optin, p.debuginfo {
+    display: none !important;
+}
+.usertext.grayed, a.thumbnail, span.crosspost-badge, aside.read-next.active.fixed {
+    display: none !important;
+}
+body, #header-bottom-right, * .md, div#header {
+    background-color:black!important;color:white!important;
+}
+pre code, code {
+    background:grey!important;
+}
+.titlebox form.flairtoggle, .titlebox form.leavecontributor-button, .leavemoderator, .linkinfo, .reddit-infobar, .side {
+    background: black!important;
+}
+a.author.admin, span.admin {
+    color:red!important;
+}
+a.author {
+    color:lightblue!important;
+}
+a.author.submitter, a.submitter {
+    color:darkblue!important;
+}
+span.stickied-tagline {
+    color:green!important;
+}
+a.title, *.md a {
+    color:blue!important;
+}
+a.title:hover, *.md a:hover {
+    color:hotpink!important;
+}
+a.title:visited, *.md a:visited {
+    color:purple!important;
+}
+.pagename a, .side .md p, .titlebox a, .titlebox .redditname a {
+    color:white!important;
+}

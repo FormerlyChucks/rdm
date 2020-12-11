@@ -1,0 +1,10 @@
+{
+  "manifest_version": 2,
+  "name": "dioReddit",
+  "version": "0.0.0",
+  "description": "Hides Reddit Ads + Applies Dark Theme",
+  "content_scripts": [{
+    "css": ["style.css"],
+    "matches": ["http://www.reddit.com/*", "https://www.reddit.com/*", "http://old.reddit.com/*", "https://old.reddit.com/*"]
+  }]
+}
