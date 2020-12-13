@@ -10,7 +10,7 @@ p.bottommenu, a.get-crisis-support, div.server-seconds.rounded, div.sidecontentb
 form#login_login-main.login-form.login-form-side, img#header-img, .sidebox.create, .redesign-beta-optin, p.debuginfo {
     display: none !important;
 }
-.usertext.grayed, a.thumbnail, span.crosspost-badge, aside.read-next.active.fixed {
+.usertext.grayed, a.thumbnail, span.crosspost-badge, aside.read-next.active.fixed, .giftgold {
     display: none !important;
 }
 body, #header-bottom-right, * .md, div#header {
