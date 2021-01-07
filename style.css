@@ -1,48 +1,15 @@
-.premium-banner, .ad-container, .promotedlink, .bottommenu.bottommenu-advertise, .happening-now {
+/*Hide Useless Things*/
+.premium-banner, .ad-container, .promotedlink, .bottommenu.bottommenu-advertise, .happening-now, .email-collection-banner, p.bottommenu, .nub,  .sidebox.create, .redesign-beta-optin, p.debuginfo, .usertext.grayed {
     display:none!important;
 }
-.email-collection-banner, section.infobar.listingsignupbar, div#sr-header-area, a#header-img.default-header, div.footer {
-    display:none!important;
+
+/*Atom Dark Theme*/
+body, .side, #header, #header-bottom-right, #sr-header-area, .leavemoderator, .titlebox form.toggle, #searchexpando, .icon-menu a, .link .usertext .md, .side .submit-link a, .side .submit-text a, #header .tabmenu li a, #header .tabmenu li.selected a, .comment-visits-box, .new-comment .usertext-body, .linkinfo, pre, pre.code, code, .reddit-infobar, .trophy-info {
+    background: #31383f !important;
+    color: rgb(250, 250, 250) !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
-p.bottommenu, a.get-crisis-support, div.server-seconds.rounded, div.sidecontentbox.trophy-area, .nub {
-    display:none!important;
-}
-form#login_login-main.login-form.login-form-side, img#header-img, .sidebox.create, .redesign-beta-optin, p.debuginfo {
-    display: none !important;
-}
-.usertext.grayed, a.thumbnail, span.crosspost-badge, aside.read-next.active.fixed, .giftgold {
-    display: none !important;
-}
-body, #header-bottom-right, * .md, div#header {
-    background-color:black!important;color:white!important;
-}
-pre code, code {
-    background:grey!important;
-}
-.titlebox form.flairtoggle, .titlebox form.leavecontributor-button, .leavemoderator, .linkinfo, .reddit-infobar, .side {
-    background: black!important;
-}
-a.author.admin, span.admin {
-    color:red!important;
-}
-a.author {
-    color:lightblue!important;
-}
-a.author.submitter, a.submitter {
-    color:darkblue!important;
-}
-span.stickied-tagline {
-    color:green!important;
-}
-a.title, *.md a {
-    color:blue!important;
-}
-a.title:hover, *.md a:hover {
-    color:hotpink!important;
-}
-a.title:visited, *.md a:visited {
-    color:purple!important;
-}
-.pagename a, .side .md p, .titlebox a, .titlebox .redditname a {
-    color:white!important;
+/*Header Border*/
+#header, #sr-header-area {
+    border-bottom-color: #31383f !important;
 }
