@@ -1,5 +1,5 @@
 /*Hide Useless Things*/
-.premium-banner, .ad-container, .promotedlink, .bottommenu.bottommenu-advertise, .happening-now, .email-collection-banner, p.bottommenu, .nub,  .sidebox.create, .redesign-beta-optin, p.debuginfo, .usertext.grayed, .giftgold, div.reddit-infobar.md-container-small with-icon.with-btn.cookie-infobar {
+.premium-banner, .ad-container, .promotedlink, .bottommenu.bottommenu-advertise, .happening-now, .email-collection-banner, p.bottommenu, .nub,  .sidebox.create, .redesign-beta-optin, p.debuginfo, .usertext.grayed, .giftgold, #eu-cookie-policy {
     display:none!important;
 }
 
